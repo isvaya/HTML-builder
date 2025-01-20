@@ -8,7 +8,7 @@ async function copyDirectory(src, dest) {
     const destPath = path.join(dest, entry.name);
     if (entry.isDirectory()) {
       await copyDirectory(srcPath, destPath);
-    } else if ( entry.isFile()) {
+    } else if (entry.isFile()) {
       await fs.copyFile(srcPath, destPath);
     }
   }
